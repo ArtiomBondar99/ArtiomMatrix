@@ -68,10 +68,11 @@ def find_all_roots(f, a, b, tol=1e-6):
     for i in range(len(x) - 1):
         if np.sign(f(x[i])) != np.sign(f(x[i + 1])):
             root = np.round(bisection_method(f, x[i], x[i + 1], tol), 0)
-            if not any(abs(x - root) < 0.000001 for x in roots):
+            if (not any(abs(x - root) < 0.000001 for x in roots) and 0 == np.round(f(root),2)):
                 roots.append(root)
 
     return roots
+
 
 if __name__ == '__main__':
     f = lambda x: (x**2 - 7*x + 6) /(2*x**2 - 3)
