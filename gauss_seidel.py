@@ -37,13 +37,13 @@ def gauss_seidel(A, b, X0, TOL=1e-16, N=200):
             X0 = x.copy()
 
         print("Maximum number of iterations exceeded")
-        return tuple(x)
+        return tuple(round(val,2)for val in x)
 
 
 if __name__ == '__main__':
 
-    A = np.array([[3, 1, 1], [1, 1, 3], [1, 3, 1]])
-    b = np.array([7, 7, 11])
+    A = np.array([[1, 1, 1], [1, 2, 4], [1, 3, 9]])
+    b = np.array([3, 4, -1])
     X0 = np.zeros_like(b)
 
     solution =gauss_seidel(A, b, X0)

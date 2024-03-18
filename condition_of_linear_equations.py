@@ -49,7 +49,7 @@ def condition_number(A):
 # Carmel Dor 316015882
 # Artiom Bondar 332692730
 # Git:https://github.com/IMrMoon/matrix1.git
-# Name: Segev Chen
+# Name: Artiom Bondar
 if __name__ == '__main__':
     A = np.array([[-1, -2, 5],
                   [4, -1, 1],
@@ -57,6 +57,3 @@ if __name__ == '__main__':
     cond = condition_number(A)
 
     print(bcolors.OKGREEN, "\n condition number: ", cond, bcolors.ENDC)
-
-name = 'segev ya shablul'
-print(bcolors.OKBLUE, name)

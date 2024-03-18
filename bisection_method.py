@@ -59,22 +59,26 @@ def bisection_method(f, a, b, tol=1e-6):
 
 def find_all_roots(f, a, b, tol=1e-6):
     roots = []
+    if a == 0 and b > 0:
+        a = 0.00001
+    if a == 0 and b < 0:
+        a = -0.00001
     x = np.linspace(a, b, 1000)  # Divide the interval into smaller sub-intervals
 
     for i in range(len(x) - 1):
         if np.sign(f(x[i])) != np.sign(f(x[i + 1])):
-            root = bisection_method(f, x[i], x[i + 1], tol)
-            roots.append(root)
+            root = np.round(bisection_method(f, x[i], x[i + 1], tol), 0)
+            if not any(abs(x - root) < 0.000001 for x in roots):
+                roots.append(root)
 
     return roots
 
-
 if __name__ == '__main__':
-    f = lambda x: x**2 - 4
+    f = lambda x: (x**2 - 7*x + 6) /(2*x**2 - 3)
 
     # Adjust the interval to avoid the singularity
-    a = -2
-    b = 5
+    a = 0
+    b = 8
 
     roots = find_all_roots(f, a, b)
     print(bcolors.OKBLUE, f"\nThe equation f(x) has approximate roots at {roots}", bcolors.ENDC)
