@@ -62,7 +62,14 @@ def jacobi_iterative(A, b, X0, TOL=1e-16, N=200):
         print("Maximum number of iterations exceeded")
         return tuple(x)
 
-
+# Date: 18.3.24
+# Group members:
+# Segev Chen 322433400
+# Gad Gadi Hasson 207898123
+# Carmel Dor 316015882
+# Artiom Bondar 332692730
+# Git:https://github.com/IMrMoon/SegevAnaliza.git
+# Name: Segev Chen
 if __name__ == "__main__":
     A = np.array([[3, 1, 1], [1, 1, 3], [1, 3, 1]])
     b = np.array([7, 7, 11])

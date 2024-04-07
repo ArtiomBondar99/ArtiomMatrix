@@ -1,7 +1,8 @@
 import numpy as np
 
 from colors import bcolors
-from matrix_utility import swap_rows_elementary_matrix, row_addition_elementary_matrix
+from matrix_utility import swap_rows_elementary_matrix, row_addition_elementary_matrix, DominantDiagonalFix, is_diagonally_dominant, scalar_multiplication_elementary_matrix
+# from gaussian_elimination import backward_substitution
 
 
 def lu(A):
@@ -79,13 +80,21 @@ def lu_solve(A_b):
         print("{:.6f}".format(x))
     print(bcolors.ENDC)
 
-
+# Date: 18.3.24
+# Group members:
+# Segev Chen 322433400
+# Gad Gadi Hasson 207898123
+# Carmel Dor 316015882
+# Artiom Bondar 332692730
+# Git:https://github.com/IMrMoon/SegevAnaliza.git
+# Name: Segev Chen
 if __name__ == '__main__':
     np.set_printoptions(suppress=True, precision=4)
     # A_b = [[1, -1, 2, -1, -8],
     #        [2, -2, 3, -3, -20],
     #        [1, 1, 1, 0, -2],
     #        [1, -1, 4, 3, 4]]
+
     A_b = [[-1.41, 2, 0, 1],
            [1, -1.41, 1, 1],
            [0, 2, -1.41, 1]]
