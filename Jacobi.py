@@ -68,8 +68,8 @@ def jacobi_iterative(A, b, X0, TOL=1e-16, N=200):
 # Gad Gadi Hasson 207898123
 # Carmel Dor 316015882
 # Artiom Bondar 332692730
-# Git:https://github.com/IMrMoon/SegevAnaliza.git
-# Name: Segev Chen
+# Git:https://github.com/ArtiomBondar99/ArtiomMatrix
+# Name: Artiom Bondar
 if __name__ == "__main__":
     A = np.array([[3, 1, 1], [1, 1, 3], [1, 3, 1]])
     b = np.array([7, 7, 11])
